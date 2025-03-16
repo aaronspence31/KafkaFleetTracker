@@ -33,19 +33,19 @@ The vehicle tracking system was run for 1 hour to demonstrate its capabilities. 
 
 ### Current Vehicle Positions
 
-![Vehicle Positions Map](demo_output/vehicle_positions_example.png)
+![Vehicle Positions Map](demo/demo_output/vehicle_positions_example.png)
 
 _The map shows the current positions of all vehicles in the San Francisco area, with different colors representing vehicle types. You can see 5 clusters in the image where each cluster contains the positions of that vehicle over time. Here we can see that data integrity is maintained as each vehicle is represented by a single cluster and the positions are updating as expected._
 
 ### Position Updates Processed
 
-![Position Updates per Vehicle](demo_output/vehicle_updates_example.png)
+![Position Updates per Vehicle](demo/demo_output/vehicle_updates_example.png)
 
-_This chart shows the total number of position updates processed for each vehicle over the 2-hour period. The system successfully processed an equal amount of updates for each vehicle and processed xx updates over an hour which is what we would expect with 5 vehicles sending updates every 5 seconds. This is a good sanity check that the system is working as expected._
+_This chart shows the total number of position updates processed for each vehicle over the 1-hour period. The system successfully processed an equal amount of updates for each vehicle._
 
 ### Real-Time Update Timeline
 
-![Update Timeline](demo_output/update_timeline_example.png)
+![Update Timeline](demo/demo_output/update_timeline_example.png)
 
 _The timeline visualization demonstrates consistent message processing through the Kafka pipeline, showing when each vehicle's position was updated. Note the regular pattern of updates, with no periods of time where no updates where processed, confirming reliable end-to-end data flow._
 
