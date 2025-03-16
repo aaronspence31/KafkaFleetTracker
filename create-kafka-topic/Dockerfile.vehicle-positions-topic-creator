@@ -1,0 +1,21 @@
+FROM amazoncorretto:11
+
+# Install required package to get tar command
+RUN yum install -y tar gzip
+
+# Install Kafka binaries
+RUN curl -O https://archive.apache.org/dist/kafka/3.6.0/kafka_2.13-3.6.0.tgz && \
+    tar -xzf kafka_2.13-3.6.0.tgz && \
+    rm kafka_2.13-3.6.0.tgz
+
+# Copy the existing script file
+COPY create-vehicle-positions-topic.sh /create-vehicle-positions-topic.sh
+
+# Make the script executable
+RUN chmod +x /create-vehicle-positions-topic.sh
+
+# Verify script exists
+RUN ls -la / | grep create
+
+# Run the script to create the vehicle positions topic
+CMD ["/bin/bash", "/create-vehicle-positions-topic.sh"]

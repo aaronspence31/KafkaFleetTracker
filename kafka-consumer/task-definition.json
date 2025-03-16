@@ -1,0 +1,49 @@
+{
+    "family": "vehicle-position-consumer",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "512",
+    "memory": "1024",
+    "executionRoleArn": "arn:aws:iam::xxxxxxxxxxxx:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "consumer",
+            "image": "xxxxxxxxxxxx.dkr.ecr.us-east-1.amazonaws.com/vehicle-position-consumer:latest",
+            "essential": true,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/vehicle-position-consumer",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "environment": [
+                {
+                    "name": "SNOWFLAKE_USER",
+                    "value": "vehicle_app_user"
+                },
+                {
+                    "name": "SNOWFLAKE_PASSWORD",
+                    "value": "placeholder"
+                },
+                {
+                    "name": "SNOWFLAKE_ACCOUNT",
+                    "value": "placeholder"
+                },
+                {
+                    "name": "SNOWFLAKE_WAREHOUSE",
+                    "value": "VEHICLE_TRACKING_WH"
+                },
+                {
+                    "name": "SNOWFLAKE_DATABASE",
+                    "value": "VEHICLE_TRACKING_DB"
+                },
+                {
+                    "name": "SNOWFLAKE_SCHEMA",
+                    "value": "VEHICLE_DATA"
+                }
+            ]
+        }
+    ]
+}

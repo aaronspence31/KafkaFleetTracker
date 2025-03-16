@@ -1,0 +1,3 @@
+confluent-kafka
+snowflake-connector-python
+python-dateutil
