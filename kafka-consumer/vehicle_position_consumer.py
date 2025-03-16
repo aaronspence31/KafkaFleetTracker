@@ -56,13 +56,13 @@ snowflake_params = {
 }
 
 # Batch processing configuration
-BATCH_SIZE = 10  # Number of messages to batch before processing
+BATCH_SIZE = 10
 MAX_BATCH_TIME_MS = 5000
 
 # In-memory vehicle state tracking
 vehicle_states = {}
 batch_records = []
-last_batch_time = time.time() * 1000  # Convert to milliseconds
+last_batch_time = time.time() * 1000
 
 # Flag for graceful shutdown
 running = True
