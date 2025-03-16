@@ -8,8 +8,8 @@ import time
 # Snowflake connection parameters - load from environment or .env file
 snowflake_params = {
     "user": os.environ.get("SNOWFLAKE_USER", "vehicle_app_user"),
-    "password": os.environ.get("SNOWFLAKE_PASSWORD", "Getthesnowflake#1"),
-    "account": os.environ.get("SNOWFLAKE_ACCOUNT", "PYZAOLG-JX88898"),
+    "password": os.environ.get("SNOWFLAKE_PASSWORD", "placeholder"),
+    "account": os.environ.get("SNOWFLAKE_ACCOUNT", "placeholder"),
     "warehouse": os.environ.get("SNOWFLAKE_WAREHOUSE", "VEHICLE_TRACKING_WH"),
     "database": os.environ.get("SNOWFLAKE_DATABASE", "VEHICLE_TRACKING_DB"),
     "schema": os.environ.get("SNOWFLAKE_SCHEMA", "VEHICLE_DATA"),
